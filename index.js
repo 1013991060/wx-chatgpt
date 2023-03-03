@@ -117,10 +117,6 @@ async function getAIMessage({ Content, FromUserName }) {
     },
   });
 
-  // 超过限制，返回提示
-  if (aiType === AI_TYPE_IMAGE && count >= LIMIT_AI_IMAGE_COUNT) {
-    return LIMIT_COUNT_RESPONSE;
-  }
 
   // 没超过限制时，正常走AI链路
   // 因为AI响应比较慢，容易超时，先插入一条记录，维持状态，待后续更新记录。

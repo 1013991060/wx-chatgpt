@@ -118,11 +118,6 @@ async function getAIMessage({ Content, FromUserName }) {
   });
 
   // 超过限制，返回提示
-  if (aiType === AI_TYPE_TEXT && count >= LIMIT_AI_TEXT_COUNT) {
-    return LIMIT_COUNT_RESPONSE;
-  }
-
-  // 超过限制，返回提示
   if (aiType === AI_TYPE_IMAGE && count >= LIMIT_AI_IMAGE_COUNT) {
     return LIMIT_COUNT_RESPONSE;
   }
